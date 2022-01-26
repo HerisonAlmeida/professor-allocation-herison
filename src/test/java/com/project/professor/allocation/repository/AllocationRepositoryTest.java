@@ -28,5 +28,8 @@ public class AllocationRepositoryTest {
 
         System.out.println(allocation);
     }
-    public interface AllocationRepository extends JpaRepository
+    public interface AllocationRepository extends JpaRepository{
+
+
+    }
 }
