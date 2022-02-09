@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DepartmentController {
 
-    private final DepartmentService departmenteService;
+    private final DepartmentService departmentService;
 
-    public DepartmentController(DepartmentService departmenteService) {
-        this.departmenteService = departmenteService;
+    public DepartmentController(DepartmentService departmentService) {
+        this.departmentService = departmentService;
     }
 }
