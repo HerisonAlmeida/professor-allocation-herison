@@ -35,7 +35,25 @@ public class AllocationController {
         } else {
             return new ResponseEntity<>(allocation, HttpStatus.OK);
         }
+
     }
+
+    @GetMapping(path = "/professor/{professor_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<List<Allocation>> findByProfessorId(@PathVariable(name = "professor_id") Long professorId)
+    {
+        List<Allocation> allocations = allocationService.findByProfessorId(professorId);
+        return new ResponseEntity<>(allocations, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/course/{course_id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<List<Allocation>> findByCourseId(@PathVariable(name = "course_id") Long courseId)
+    {
+        List<Allocation> allocations = allocationService.findByCourseId(courseId);
+        return new ResponseEntity<>(allocations, HttpStatus.OK);
+    }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Allocation> save(@RequestBody Allocation allocation) {
